@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="سایت رسمی موزیک‌های روح‌الله رزم">
+  <title>روح‌الله رزم | ببار بارون</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap nav">
+      <div class="logo">روح‌الله رزم</div>
+      <a href="#music">آهنگ‌ها</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <span class="label">RooHollah Razm</span>
+          <h1>صدای من، برای شما</h1>
+          <p>موزیک‌های روح‌الله رزم را آنلاین گوش کنید و با کیفیت اصلی دانلود کنید.</p>
+          <a class="black-btn" href="#music">شنیدن آهنگ‌ها</a>
+        </div>
+        <div class="portrait">
+          <img src="covers/roohollah-razm.jpg" alt="روح‌الله رزم">
+        </div>
+      </div>
+    </section>
+
+    <section id="music" class="music wrap">
+      <div class="section-title">
+        <div>
+          <span class="label">Music</span>
+          <h2>آهنگ‌ها</h2>
+        </div>
+        <input id="search" type="search" placeholder="جست‌وجوی آهنگ..." aria-label="جست‌وجوی آهنگ">
+      </div>
+
+      <article class="track" data-title="ببار بارون">
+        <img class="cover" src="covers/roohollah-razm.jpg" alt="کاور آهنگ ببار بارون">
+        <div class="track-main">
+          <div class="track-heading">
+            <div>
+              <h3>ببار بارون</h3>
+              <p>روح‌الله رزم</p>
+            </div>
+            <span class="duration">03:30</span>
+          </div>
+          <audio controls preload="metadata" src="music/bebar-baron.mp3"></audio>
+        </div>
+        <a class="download" href="music/bebar-baron.mp3" download="Rohollah-Razm-Bebar-Baron.mp3">دانلود</a>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">© <span id="year"></span> روح‌الله رزم</div>
+  </footer>
+
+  <script>
+    const search = document.getElementById('search');
+    const track = document.querySelector('.track');
+    search.addEventListener('input', () => {
+      const q = search.value.trim().toLowerCase();
+      track.hidden = q && !track.dataset.title.toLowerCase().includes(q);
+    });
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
